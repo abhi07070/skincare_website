@@ -38,10 +38,8 @@ const Modal = ({ isOpen, onClose }) => {
         onClose();
       }
     } catch (error) {
-      if (error.response && error.response.data) {
+      if (error.response.data) {
         toast.error(error.response.data.message);
-      } else {
-        toast.error("An unexpected error occurred");
       }
     }
   };
