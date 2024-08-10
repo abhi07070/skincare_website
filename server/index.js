@@ -1,23 +1,15 @@
-import mongoose from "mongoose";
-import express from "express";
-import cors from "cors";
-import env from "dotenv";
-import bodyParser from "body-parser";
-import Appointment from "./model.js";
+const mongoose = require("mongoose");
+const express = require("express");
+const cors = require("cors");
+const env = require("dotenv");
+const bodyParser = require("body-parser");
+const Appointment = require("./model.js");
 
 const app = express();
 env.config();
 
-app.use(express.json({ extended: true }));
-app.use(express.urlencoded({ extended: true }));
-const corsOptions = {
-  origin: process.env.CLIENT_URL,
-  credentials: true,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  allowedHeaders: "Content-Type, Authorization",
-};
-app.use(cors(corsOptions));
-// app.use(cors({ credentials: true, origin: process.env.CLIENT_URL }));
+app.use(cors());
+app.use(bodyParser.json());
 
 const uri = process.env.ATLAS_URI;
 
