@@ -1,18 +1,22 @@
-const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
 const env = require("dotenv");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 const Appointment = require("./model.js");
 
 const app = express();
 env.config();
 
+// Use CORS middleware
 app.use(
   cors({
     origin: process.env.CLIENT_URL,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 app.use(bodyParser.json());
 
 const uri = process.env.ATLAS_URI;
