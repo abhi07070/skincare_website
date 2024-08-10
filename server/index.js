@@ -8,7 +8,11 @@ const Appointment = require("./model.js");
 const app = express();
 env.config();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+  })
+);
 app.use(bodyParser.json());
 
 const uri = process.env.ATLAS_URI;
