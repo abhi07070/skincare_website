@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Modal = ({ isOpen, onClose }) => {
   const handleClickOutside = (e) => {
@@ -38,8 +38,12 @@ const Modal = ({ isOpen, onClose }) => {
         onClose();
       }
     } catch (error) {
-      toast.error(error.response.data.message);
-      // console.error(error);
+      // Check if the error has a response and data
+      if (error.response && error.response.data) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("An unexpected error occurred");
+      }
     }
   };
 
@@ -52,7 +56,7 @@ const Modal = ({ isOpen, onClose }) => {
       >
         <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-xl font-bold mb-4">Book an Appointment</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-medium mb-1">
                 Name
@@ -116,7 +120,6 @@ const Modal = ({ isOpen, onClose }) => {
               <button
                 type="submit"
                 className="px-4 py-1 bg-[#e69215] text-white rounded"
-                onClick={handleSubmit}
               >
                 Submit
               </button>
