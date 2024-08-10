@@ -18,6 +18,10 @@ mongoose
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.log(err));
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.post("/appointment", async (req, res) => {
   try {
     const { name, email, phone, concerns } = req.body;
