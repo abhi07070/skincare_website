@@ -11,7 +11,7 @@ env.config();
 // Use CORS middleware
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
