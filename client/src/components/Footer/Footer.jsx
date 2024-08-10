@@ -8,8 +8,7 @@ import {
 } from "react-icons/fa";
 
 const BannerImg = {
-  // backgroundImage: `url(${Banner})`,
-  backgroundColor: "#999",
+  backgroundColor: "#f8f9fa", // Light background color
   backgroundPosition: "bottom",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
@@ -20,15 +19,19 @@ const BannerImg = {
 const FooterLinks = [
   {
     title: "Home",
-    link: "/#",
+    link: "/#home",
   },
   {
-    title: "About",
-    link: "/#about",
+    title: "Products",
+    link: "/#products",
   },
   {
-    title: "Contact",
-    link: "/#contact",
+    title: "About Us",
+    link: "/#about-us",
+  },
+  {
+    title: "Contact Us",
+    link: "/#contact-us",
   },
   {
     title: "Blog",
@@ -38,18 +41,19 @@ const FooterLinks = [
 
 const Footer = () => {
   return (
-    <div style={BannerImg} className="text-white">
+    <div style={BannerImg} className="text-gray-800 ">
       <div className="container">
         <div data-aos="zoom-in" className="grid md:grid-cols-3 pb-44 pt-5">
-          {/* company details */}
+          {/* Company Details */}
           <div className="py-8 px-4">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
               {/* <img alt="" className="max-w-[50px]" /> */}
-              SKIN CARE
+              SKIN CARE PRODUCTS
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
-              beatae ea recusandae blanditiis veritatis.
+              Discover our range of premium skincare products designed to
+              rejuvenate and nourish your skin. From cleansers to moisturizers,
+              we have everything you need for a radiant complexion.
             </p>
           </div>
 
@@ -58,60 +62,50 @@ const Footer = () => {
             <div>
               <div className="py-8 px-4">
                 <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Important Links
+                  Explore
                 </h1>
                 <ul className="flex flex-col gap-3">
                   {FooterLinks.map((link) => (
                     <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-white"
+                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-gray-800"
                       key={link.title}
                     >
-                      <span>{link.title}</span>
+                      <a href={link.link}>{link.title}</a>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
+
+            {/* Social Links */}
             <div>
               <div className="py-8 px-4">
                 <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
-                  Links
+                  Follow Us
                 </h1>
-                <ul className="flex flex-col gap-3">
-                  {FooterLinks.map((link) => (
-                    <li
-                      className="cursor-pointer hover:text-primary hover:translate-x-1 duration-300 text-white"
-                      key={link.title}
-                    >
-                      <span>{link.title}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex items-center gap-3 mt-6">
+                  <a href="#" className="text-gray-800 hover:text-primary">
+                    <FaInstagram className="text-3xl" />
+                  </a>
+                  <a href="#" className="text-gray-800 hover:text-primary">
+                    <FaFacebook className="text-3xl" />
+                  </a>
+                  <a href="#" className="text-gray-800 hover:text-primary">
+                    <FaLinkedin className="text-3xl" />
+                  </a>
+                </div>
               </div>
-            </div>
-
-            {/* social links */}
-
-            <div>
-              <div className="flex items-center gap-3 mt-6">
-                <a href="#">
-                  <FaInstagram className="text-3xl" />
-                </a>
-                <a href="#">
-                  <FaFacebook className="text-3xl" />
-                </a>
-                <a href="#">
-                  <FaLinkedin className="text-3xl" />
-                </a>
-              </div>
-              <div className="mt-6">
+              <div className="mt-6 py-8 px-4">
+                <h1 className="sm:text-xl text-xl font-bold sm:text-left text-justify mb-3">
+                  Contact Us
+                </h1>
                 <div className="flex items-center gap-3">
-                  <FaLocationArrow />
-                  <p>Noida, Uttar Pradesh</p>
+                  <FaLocationArrow className="text-xl" />
+                  <p>123 Beauty Street, Glam City, Glamour</p>
                 </div>
                 <div className="flex items-center gap-3 mt-3">
-                  <FaMobileAlt />
-                  <p>+91 123456789</p>
+                  <FaMobileAlt className="text-xl" />
+                  <p>+91 987654321</p>
                 </div>
               </div>
             </div>

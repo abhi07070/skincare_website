@@ -12,14 +12,14 @@ const NavLinks = () => {
         <div key={index}>
           <div className="px-3 text-left md:cursor-pointer group">
             <h1
-              className="py-7 flex justify-between items-center md:pr-0 pr-5 group"
+              className="py-7 flex justify-between items-center md:pr-0 pr-5 group hover:text-primary  duration-300"
               onClick={() => {
                 setHeading(heading !== link.name ? link.name : "");
                 setSubHeading("");
               }}
             >
               {link.name}
-              <span className="text-xl md:hidden inline">
+              <span className="text-xl md:hidden inline hover:text-primary  duration-300">
                 <ion-icon
                   name={`${
                     heading === link.name ? "chevron-up" : "chevron-down"

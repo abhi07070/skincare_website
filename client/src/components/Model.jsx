@@ -38,7 +38,6 @@ const Modal = ({ isOpen, onClose }) => {
         onClose();
       }
     } catch (error) {
-      // Check if the error has a response and data
       if (error.response && error.response.data) {
         toast.error(error.response.data.message);
       } else {

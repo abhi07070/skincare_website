@@ -9,9 +9,7 @@ const Navbar = () => {
     <nav className="bg-white">
       <div className="flex items-center font-medium justify-around">
         <div className="z-50 p-5 md:w-auto w-full flex justify-between items-center">
-          {/* Uncomment and add your logo here */}
           <h1 className="text-xl font-bold">SKIN CARE</h1>
-          {/* <img src={Logo} alt="logo" className="md:cursor-pointer h-9" /> */}
           <div className="text-3xl md:hidden" onClick={() => setOpen(!open)}>
             <ion-icon name={`${open ? "close" : "menu"}`}></ion-icon>
           </div>
@@ -19,18 +17,27 @@ const Navbar = () => {
 
         <ul className="md:flex hidden uppercase items-center gap-8 font-[Poppins]">
           <li>
-            <Link to="/" className="py-7 px-3 inline-block">
+            <Link
+              to="/"
+              className="py-7 px-3 inline-block hover:text-primary duration-300"
+            >
               Home
             </Link>
           </li>
           <NavLinks />
           <li>
-            <Link to="/" className="py-7 px-3 inline-block">
+            <Link
+              to="/"
+              className="py-7 px-3 inline-block hover:text-primary  duration-300"
+            >
               About Us
             </Link>
           </li>
           <li>
-            <Link to="/" className="py-7 px-3 inline-block">
+            <Link
+              to="/"
+              className="py-7 px-3 inline-block hover:text-primary  duration-300"
+            >
               Contact
             </Link>
           </li>

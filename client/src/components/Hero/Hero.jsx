@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "../../assets/hero/skincare.jpeg";
 import Image1 from "../../assets/hero/skincare1.png";
 import Image2 from "../../assets/hero/skincare1.png";
 import Slider from "react-slick";
@@ -101,10 +102,18 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative overflow-hidden min-h-[550px] h-screen bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200 ">
-      <div className="container pb-8  sm:pb-0">
-        {/* Input box placed on the right side, responsive */}
-
+    <div
+      className={`relative overflow-hidden min-h-[550px] h-screen bg-gray-100 flex justify-center items-center dark:bg-gray-950 dark:text-white duration-200`}
+    >
+      {/* Background Image with Opacity */}
+      <div className="absolute inset-0 ">
+        <img
+          src={Image}
+          alt="Background"
+          className="w-full h-full object-cover opacity-30"
+        />
+      </div>
+      <div className="container pb-8 sm:pb-0 relative z-10">
         <Slider {...settings}>
           {ImageList.map((data) => (
             <div key={data.id}>

@@ -162,7 +162,7 @@ const Products = () => {
           </p>
         </div>
         {/* Search Bar */}
-        <div className="flex justify-center items-center relative py-4">
+        <div className="flex justify-center items-center relative pb-6">
           <input
             className="border-black border-2 rounded-md shadow-md py-1 px-4 sm:w-1/2 w-full outline-none sm:px-12"
             placeholder="Search skincare products..."
@@ -196,12 +196,6 @@ const Products = () => {
               </div>
             ))}
           </div>
-          {/* View all button */}
-          {/* <div className="flex justify-center">
-            <button className="text-center mt-10 cursor-pointer bg-primary text-white py-1 px-5 rounded-md">
-              View All Products
-            </button>
-          </div> */}
         </div>
       </div>
     </div>
